@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <div class="container" id="maincontainer">
+        <div class="box"><span>box_1</span></div>
+        <div class="box">box_2</div>
+        <div class="box" id="box_3">box_3</div>
+        <div class="box">box_4</div>
+        <div class="box">box_5</div>
+    </div>
+    <script>
+        console.log("hello this is first.html document.");
+        document.getElementById("box_3").style.border = "3px solid gray";
+        console.log(document.getElementsByClassName("box"));
+        let a = document.getElementsByClassName("box");
+        console.log(document.getElementById("box_3").matches("box"));
+        for(const e of a){
+            e.style.backgroundColor = "blue";
+            e.style.border = "3px solid gray";
+            e.style.height = "40px";
+            e.style.width = "40px";
+            e.style.margin = "20px";
+            e.style.padding = "10px";
+        }
+        document.getElementById("maincontainer").style.display = "flex";
+        // let x = (document.getElementsByClassName("container"));
+        // x[0].style.border = "5px solid black";
+        // x[0].style.borderRadius = "10px";
+        // x[0].style.justifyContent = "center";
+        document.querySelector(".container").style.border = "5px solid black";
+        document.querySelector(".container").style.borderRadius = "10px";
+        document.querySelector("#maincontainer").style.justifyContent = "center";
+        let y = document.querySelectorAll(".box");
+        y.forEach(e=>{
+            e.style.borderRadius = "5px";
+        })
+
+        document.querySelector(".box").style.fontSize = "20px";
+        console.log(document.getElementsByTagName("div").length);
+        document.getElementsByTagName("div")[0].style.backgroundColor = "lightgreen";
+        for(let i=1; i<document.getElementsByTagName("div").length; i++){
+            document.getElementsByTagName("div")[i].style.backgroundColor = "cyan";
+            document.getElementsByTagName("div")[i].style.border = "5px solid blue";
+        }
+        document.getElementsByTagName("body")[0].style.backgroundColor = "lightgray";
+        console.log(document.getElementById("maincontainer").matches("div"));
+    </script>
+</body>
+</html>
+<!-- 
+
+getElementById -> it is used to get the element by id.
+
+getElementsByClassName => it is used to get an element by its class name as we know that we can give the same class name to the multiple element so it is always return the value in the form of array we just have to apply them using the loop.
+
+querySelector => it is used to get the first element of the given class of id.
+
+querySelectorAll -> it is used to get all the element of the given class name.
+
+getElementsByTagName -> it is used to get the elements by their tag name it is also stores in the form of array.
+
+
+ -->
